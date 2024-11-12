@@ -24,11 +24,9 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore
 
-      - name: Build
-        run: dotnet build --no-restore --configuration Release
-
       - name: Run tests
         run: dotnet test --no-build --verbosity normal
 
       - name: Run tests
-        run:  dotnet test .\ApiNet.Tests\ApiNet.Tests.csproj --configuration Release
+        run: dotnet test .\ApiNet.Tests\ApiNet.Tests.csproj --configuration Release
+      
