@@ -23,7 +23,7 @@ public class TaskDTO // the validations must be done in backend
     public DateTime date { get; set; } // ;P
     // ;P
     
-    public TaskDTO() { } // serializations and desserializations
+    public TaskDTO() {} // serializations and desserializations
     
 
     public override string ToString()
