@@ -3,15 +3,15 @@
 on:
   push:
     branches:
-      - main 
+      - main
   pull_request:
     branches:
       - main
 
 jobs:
   build-and-test:
-    runs-on: ubuntu-latest  
-
+    runs-on: ubuntu-latest
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -19,14 +19,13 @@ jobs:
       - name: Setup .NET SDK
         uses: actions/setup-dotnet@v2
         with:
-          dotnet-version: '8.0.x'  # Versão do .NET que você está usando no projeto
+          dotnet-version: '8.0.x'  
 
       - name: Restore dependencies
         run: dotnet restore
 
-      - name: Run tests
-        run: dotnet test --no-build --verbosity normal
+      - name: Build the solution
+        run: dotnet build --configuration Release 
 
       - name: Run tests
-        run: dotnet test .\ApiNet.Tests\ApiNet.Tests.csproj --configuration Release
-      
+        run: dotnet test .\ApiNet.Tests\ApiNet.Tests.csproj --configuration Release --no-build --verbosity normal
