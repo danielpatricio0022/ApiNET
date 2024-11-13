@@ -27,8 +27,5 @@ jobs:
       - name: Build the solution
         run: dotnet build --configuration Release
 
-      - name: Change directory to ApiNet.Tests
-        run: cd ApiNet.Tests 
-
       - name: Run tests
-        run: dotnet test ApiNet.Tests.csproj --configuration Release --no-build --verbosity normal
+        run: dotnet test .\ApiNet.Tests\ApiNet.Tests.csproj --configuration Release --no-build --verbosity normal
