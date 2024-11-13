@@ -13,4 +13,8 @@
         <PackageReference Include="Xunit.Gherkin.Quick" Version="4.5.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Include=".github\workflows\ci.yml" />
+    </ItemGroup>
+
 </Project>
