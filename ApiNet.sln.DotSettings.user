@@ -12,5 +12,8 @@
     &lt;TestId&gt;xUnit::98278CDC-CF9C-48D5-A70B-1325C51D17E2::net8.0::ApiNet.Tests.api.BDD.TestBdd&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::98278CDC-CF9C-48D5-A70B-1325C51D17E2::net8.0::ApiNet.Tests.api.ApiTest.GetTasks&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::98278CDC-CF9C-48D5-A70B-1325C51D17E2::net8.0::ApiNet.Tests.api.ApiTest.GetTaskById&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::98278CDC-CF9C-48D5-A70B-1325C51D17E2::net8.0::ApiNet.Tests.api.ApiTest&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
+&lt;/SessionState&gt;</s:String>
+	
+	</wpf:ResourceDictionary>

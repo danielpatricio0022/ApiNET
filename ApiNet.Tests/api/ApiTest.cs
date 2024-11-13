@@ -4,19 +4,21 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using ApiNet.model;
-using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.VisualStudio.TestPlatform.TestHost;
 using Xunit;
 
 namespace ApiNet.Tests.api
 {
-    public class ApiTest : IClassFixture<WebApplicationFactory<Program>> 
+    public class ApiTest
     {
         private readonly HttpClient httpClient;
-
-        public ApiTest(WebApplicationFactory<Program> factory) 
+        
+        public ApiTest()
         {
-            httpClient = factory.CreateClient(); 
+           
+            httpClient = new HttpClient
+            {
+                BaseAddress = new Uri("http://localhost:5119/") 
+            };
         }
 
         [Fact]
