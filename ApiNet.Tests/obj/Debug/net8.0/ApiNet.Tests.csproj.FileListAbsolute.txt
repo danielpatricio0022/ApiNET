@@ -114,3 +114,6 @@ C:\Users\se66162\RiderProjects\ApiNet\ApiNet.Tests\obj\Debug\net8.0\ref\ApiNet.T
 C:\Users\se66162\RiderProjects\ApiNet\ApiNet.Tests\bin\Debug\net8.0\Gherkin.dll
 C:\Users\se66162\RiderProjects\ApiNet\ApiNet.Tests\bin\Debug\net8.0\RestSharp.dll
 C:\Users\se66162\RiderProjects\ApiNet\ApiNet.Tests\bin\Debug\net8.0\Xunit.Gherkin.Quick.dll
+C:\Users\se66162\RiderProjects\Api\ApiNet.Tests\obj\Debug\net8.0\ApiNet.Tests.dll
+C:\Users\se66162\RiderProjects\Api\ApiNet.Tests\obj\Debug\net8.0\refint\ApiNet.Tests.dll
+C:\Users\se66162\RiderProjects\Api\ApiNet.Tests\obj\Debug\net8.0\ApiNet.Tests.pdb
