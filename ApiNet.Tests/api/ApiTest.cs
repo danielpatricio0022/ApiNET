@@ -12,12 +12,16 @@ namespace ApiNet.Tests.api
     {
         private readonly HttpClient httpClient = new()
         {
-            BaseAddress = new Uri("http://localhost:5119/") 
+            BaseAddress = new Uri("http://localhost:5119/") ,
+            Timeout = TimeSpan.FromSeconds(30)
         };
 
         [Fact]
         public async Task GetTasks()
         {
+            var pingResponse = await httpClient.GetAsync("");
+            Assert.True(pingResponse.IsSuccessStatusCode, "A API não está disponível no endereço configurado.");
+
             var response = await httpClient.GetAsync("tasks");
             var data = await response.Content.ReadFromJsonAsync<List<TaskDTO>>();
 
