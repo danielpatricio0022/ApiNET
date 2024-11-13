@@ -2,72 +2,68 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Threading.Tasks;
 using ApiNet.model;
+using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.VisualStudio.TestPlatform.TestHost;
 using Xunit;
 
-namespace ApiNet.Tests.api;
-
-public class ApiTest
+namespace ApiNet.Tests.api
 {
-    private readonly HttpClient httpClient;
-    
-    public ApiTest( )
+    public class ApiTest : IClassFixture<WebApplicationFactory<Program>> 
     {
-        httpClient = new HttpClient
+        private readonly HttpClient httpClient;
+
+        public ApiTest(WebApplicationFactory<Program> factory) 
         {
-            BaseAddress = new Uri("http://localhost:5119")
-            
-        }; 
-    }
-    
-    [Fact]
-    public async void GetTasks()
-    {
-        var response = await httpClient.GetAsync("tasks");
-        var data = await response.Content.ReadFromJsonAsync<List<TaskDTO>>();
-        
-       
-        
-        if (response.Content.Headers.ContentType != null)
-            Assert.Equal("application/json", response.Content.Headers.ContentType.MediaType);
-        
-        Assert.True(response.IsSuccessStatusCode);
-        Assert.NotNull(data);
-    }
-    
-    [Fact]
-    public async void GetTaskById()
-    {
-        var response = await httpClient.GetAsync("tasks/3");
-        var data = await response.Content.ReadFromJsonAsync<TaskDTO>();
-        
-        if (response.Content.Headers.ContentType != null)
-            Assert.Equal("application/json", response.Content.Headers.ContentType.MediaType);
-        
-        Assert.True(response.IsSuccessStatusCode);
-        Assert.NotNull(data);
-    }
-    
-    
-    [Fact]
-    public async void UpdateTask()
-    {
-        var task = new TaskDTO()
+            httpClient = factory.CreateClient(); 
+        }
+
+        [Fact]
+        public async Task GetTasks()
         {
-            name = "Task 3",
-            description = "Description 3",
-            done = false,
-            date = DateTime.Now
-        };
-        
-        var response = await httpClient.PutAsJsonAsync("tasks/3", task);
-        var data = await response.Content.ReadFromJsonAsync<TaskDTO>();
-        
-        if (response.Content.Headers.ContentType != null)
-            Assert.Equal("application/json", response.Content.Headers.ContentType.MediaType);
-        
-        Assert.True(response.IsSuccessStatusCode);
-        Assert.NotNull(data);
+            var response = await httpClient.GetAsync("tasks");
+            var data = await response.Content.ReadFromJsonAsync<List<TaskDTO>>();
+
+            if (response.Content.Headers.ContentType != null)
+                Assert.Equal("application/json", response.Content.Headers.ContentType.MediaType);
+
+            Assert.True(response.IsSuccessStatusCode);
+            Assert.NotNull(data);
+        }
+
+        [Fact]
+        public async Task GetTaskById()
+        {
+            var response = await httpClient.GetAsync("tasks/3");
+            var data = await response.Content.ReadFromJsonAsync<TaskDTO>();
+
+            if (response.Content.Headers.ContentType != null)
+                Assert.Equal("application/json", response.Content.Headers.ContentType.MediaType);
+
+            Assert.True(response.IsSuccessStatusCode);
+            Assert.NotNull(data);
+        }
+
+        [Fact]
+        public async Task UpdateTask()
+        {
+            var task = new TaskDTO()
+            {
+                name = "Task 3",
+                description = "Description 3",
+                done = false,
+                date = DateTime.Now
+            };
+
+            var response = await httpClient.PutAsJsonAsync("tasks/3", task);
+            var data = await response.Content.ReadFromJsonAsync<TaskDTO>();
+
+            if (response.Content.Headers.ContentType != null)
+                Assert.Equal("application/json", response.Content.Headers.ContentType.MediaType);
+
+            Assert.True(response.IsSuccessStatusCode);
+            Assert.NotNull(data);
+        }
     }
-    
 }
