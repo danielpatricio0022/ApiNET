@@ -10,16 +10,10 @@ namespace ApiNet.Tests.api
 {
     public class ApiTest
     {
-        private readonly HttpClient httpClient;
-        
-        public ApiTest()
+        private readonly HttpClient httpClient = new()
         {
-           
-            httpClient = new HttpClient
-            {
-                BaseAddress = new Uri("http://localhost:5119/") 
-            };
-        }
+            BaseAddress = new Uri("http://localhost:5119/") 
+        };
 
         [Fact]
         public async Task GetTasks()
