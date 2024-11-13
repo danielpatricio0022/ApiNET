@@ -1,4 +1,4 @@
-# Task API .NET
+# API .NET
 Projeto API .NET simples que realiza operações CRUD. A API consome um back-end em Node.js para a persistência e manipulação de dados.
   
 ### Funcionalidades
@@ -23,10 +23,12 @@ Copy
   git clone https://github.com/danielpatricio0022/ApiNET.git
 ```
 
-2. Configurar a API
-Siga as instruções para configurar o projeto.
+**2. Configurar a API**
 
-3. Rodar a API
+  Siga as instruções para configurar o projeto.
+
+**3. Rodar a API**
+
 Para rodar a aplicação localmente .Net:
   ```
   dotnet run
@@ -37,11 +39,13 @@ Para rodar a aplicação localmente Node:
   npm run dev
   ```
 
-4. Testes
+**4. Testes**
+
 Para rodar os testes unitários, execute:
   ```
   dotnet test
   ```
 
-5. CI/CD
+**5. CI/CD**
+
 Este projeto já está configurado para CI/CD com GitHub Actions. Assim que as alterações forem feitas e push para o repositório, o pipeline será executado automaticamente para build e testes.
