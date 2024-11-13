@@ -27,5 +27,16 @@ jobs:
       - name: Build the solution
         run: dotnet build --configuration Release
 
+      - name: Verify path existence
+        shell: pwsh
+        run: |
+            if (Test-Path -Path "../") {
+              Write-Host "File Exists."
+            } else {
+              Write-Host "File Does Not Exists."
+            }
+
       - name: Run tests
-        run: dotnet test .\ApiNet.Tests\ApiNet.Tests.csproj --configuration Release --no-build --verbosity normal
+        run: dotnet test ..\ApiNet.Tests\ApiNet.Tests.csproj --configuration Release --no-build --verbosity normal
+      
+      
