@@ -30,7 +30,7 @@ jobs:
       - name: Verify path existence
         shell: pwsh
         run: |
-            if (Test-Path -Path "../") {
+            if (Test-Path -Path "..\ApiNet.Tests\ApiNet.Tests.csproj") {
               Write-Host "File Exists."
             } else {
               Write-Host "File Does Not Exists."
