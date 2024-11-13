@@ -39,7 +39,7 @@ jobs:
       - name: Finalize ApiNet.exe if running
         run: |
           taskkill /IM ApiNet.exe /F || echo "ApiNet.exe não encontrado"
-         displayName: 'Finalizar ApiNet.exe se estiver em execução'
+       
 
       - name: Run tests
         run: dotnet test ./ApiNet.Tests/ApiNet.Tests.csproj --configuration Release --no-build --verbosity normal
