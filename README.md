@@ -6,6 +6,7 @@ CRUD completo para gerenciar tarefas.
 Consumo de API externa em Node.js.
 Testes automatizados para validação da funcionalidade.
 Integração contínua e entrega contínua (CI/CD) com GitHub Actions.
+Projeto documentado com Swagger.
 
 ### Tecnologias Utilizadas
 - .NET 8 
@@ -13,6 +14,7 @@ Integração contínua e entrega contínua (CI/CD) com GitHub Actions.
 - xUnit 
 - RestSharp 
 - GitHub Actions
+- Swagger Api
 - Prisma Orm/Sqlite
 - 
 **Como Rodar o Projeto**
